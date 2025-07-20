@@ -1,0 +1,32 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"name": "unity3d client",
+			"type": "vstuc",
+			"request": "attach"
+		},
+		{
+			"name": "server",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${workspaceFolder}/server/server.py",
+			"cwd": "${workspaceFolder}/server/",
+			"console": "integratedTerminal",
+			"args": [
+			],
+			"justMyCode": true,
+		},
+		{
+			"name": "parseconfig",
+			"type": "debugpy",
+			"request": "launch",
+			"program": "${workspaceFolder}/config/parseconfig.py",
+			"cwd": "${workspaceFolder}/config/",
+			"console": "integratedTerminal",
+			"args": [
+			],
+			"justMyCode": true,
+		},
+	]
+}

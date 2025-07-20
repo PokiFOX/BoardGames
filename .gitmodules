@@ -1,0 +1,9 @@
+[submodule "config"]
+	path = config
+	url = git@github.com:PokiFOX/BoardGames-config.git
+[submodule "server"]
+	path = server
+	url = git@github.com:PokiFOX/BoardGames-server.git
+[submodule "unity3d"]
+	path = unity3d
+	url = git@github.com:PokiFOX/BoardGames-unity3d.git

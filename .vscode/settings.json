@@ -61,7 +61,11 @@
 		"unity3d/*.csproj": true,
 		"unity3d/*.sln": true,
 	},
-	"dotnet.defaultSolution": "unity3d.sln",
+	"dotnet.defaultSolution": "unity3d/unity3d.sln",
+	"explorer.fileNesting.enabled": true,
+	"explorer.fileNesting.patterns": {
+		"*.sln": "*.csproj",
+	},
 	"[csharp]":{
 		"editor.tabSize": 4,
 		"editor.insertSpaces": false,

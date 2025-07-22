@@ -4,7 +4,8 @@
 		{
 			"name": "unity3d client",
 			"type": "vstuc",
-			"request": "attach"
+			"request": "attach",
+			"projectPath": "${workspaceFolder}/unity3d",
 		},
 		{
 			"name": "server",

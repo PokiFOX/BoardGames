@@ -8,21 +8,10 @@
 			"projectPath": "${workspaceFolder}/unity3d",
 		},
 		{
-			"name": "server",
+			"name": "parse config",
 			"type": "debugpy",
 			"request": "launch",
-			"program": "${workspaceFolder}/server/server.py",
-			"cwd": "${workspaceFolder}/server/",
-			"console": "integratedTerminal",
-			"args": [
-			],
-			"justMyCode": true,
-		},
-		{
-			"name": "parseconfig",
-			"type": "debugpy",
-			"request": "launch",
-			"program": "${workspaceFolder}/config/parseconfig.py",
+			"program": "${workspaceFolder}/config/parse.py",
 			"cwd": "${workspaceFolder}/config/",
 			"console": "integratedTerminal",
 			"args": [

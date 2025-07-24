@@ -1,0 +1,31 @@
+services:
+  boardgames_nginx:
+    image: nginx:latest
+    container_name: boardgames_nginx
+    restart: unless-stopped
+    ports:
+      - 22005:80
+      - 22006:443
+    volumes:
+      - ./conf.d:/etc/nginx/conf.d
+      - ../www:/var/www/html
+    environment:
+      - TZ=Asia/Shanghai
+    depends_on:
+      - boardgames_php
+    networks:
+      - boardgames_net
+
+  boardgames_php:
+    build:
+      context: php
+    container_name: boardgames_php
+    restart: unless-stopped
+    volumes:
+      - ../www:/var/www/html
+    networks:
+      - boardgames_net
+
+networks:
+  boardgames_net:
+    external: true

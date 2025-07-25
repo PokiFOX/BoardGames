@@ -1,6 +1,6 @@
 # BoardGames
 
-docker network create tobii_net
+docker network create boardgames_net
 
 22001: BT面板
 22002: SSH登录

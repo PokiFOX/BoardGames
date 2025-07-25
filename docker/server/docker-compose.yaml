@@ -1,0 +1,16 @@
+services:
+  boardgames_server:
+    image: ubuntu:24.04
+    container_name: boardgames_server
+    restart: unless-stopped
+    command: tail -f /dev/null
+    volumes:
+      - ../server:/data
+    ports:
+      - "22011:22011"
+    networks:
+      - boardgames_net
+
+networks:
+  boardgames_net:
+    external: true

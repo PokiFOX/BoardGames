@@ -1,0 +1,27 @@
+{
+	"configurations": [
+		{
+			"name": "Mac",
+			"compileCommands": "${workspaceFolder}/server/build/compile_commands.json",
+			"includePath": [
+				"${workspaceFolder}/server/**",
+				"/opt/homebrew/include/**",
+				"/opt/homebrew/include/libepoll-shim/**",
+				"/usr/local/include/**"
+			],
+			"defines": [],
+			"macFrameworkPath": [
+				"/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/System/Library/Frameworks"
+			],
+			"compilerPath": "/usr/bin/clang++",
+			"cStandard": "c17",
+			"cppStandard": "c++20",
+			"intelliSenseMode": "macos-clang-arm64",
+			"browse": {
+				"path": ["${workspaceFolder}/server/**"],
+				"limitSymbolsToIncludedHeaders": false
+			}
+		}
+	],
+	"version": 4
+}

@@ -60,11 +60,14 @@
 		"unity3d/Temp/": true,
 		"unity3d/*.csproj": true,
 		"unity3d/*.sln": true,
+		"unity3d/*.slnx": true,
+		".cache": true,
 	},
-	"dotnet.defaultSolution": "unity3d/unity3d.sln",
+	"dotnet.defaultSolution": "unity3d/unity3d.slnx",
 	"explorer.fileNesting.enabled": true,
 	"explorer.fileNesting.patterns": {
 		"*.sln": "*.csproj",
+		"*.slnx": "*.csproj",
 	},
 	"[csharp]":{
 		"editor.tabSize": 4,
@@ -157,4 +160,11 @@
 		"fft": "cpp"
 	},
 	"cmake.ignoreCMakeListsMissing": true,
+	"clangd.arguments": [
+		"--compile-commands-dir=${workspaceFolder}/server/build",
+		"--background-index",
+		"--completion-style=detailed"
+	],
+	"C_Cpp.default.compileCommands": "${workspaceFolder}/server/build/compile_commands.json",
+	"C_Cpp.default.configurationProvider": "",
 }

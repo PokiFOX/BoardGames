@@ -20,16 +20,13 @@
 		},
 		{
 			"name": "(lldb) BoardGames",
-			"type": "cppdbg",
+			"type": "lldb",
 			"request": "launch",
 			"program": "${workspaceFolder}/server/build/BoardGames",
 			"args": [],
 			"cwd": "${workspaceFolder}/server",
-			"preLaunchTask": "compile BoardGames",
-			"miDebuggerPath": "${workspaceFolder}/lldb.sh",
-			"MIMode": "lldb",
-			"externalConsole": false,
-			"stopAtEntry": false,
+			"preLaunchTask": "build BoardGames",
+			"stopOnEntry": false
 		},
 	]
 }

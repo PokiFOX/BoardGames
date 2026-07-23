@@ -2,16 +2,26 @@
 	"version": "2.0.0",
 	"tasks": [
 		{
-			"label": "compile BoardGames",
+			"label": "build BoardGames",
 			"type": "shell",
-			"command": "cmake --build \"${workspaceFolder}/server/build\"",
+			"command": "./build.sh",
 			"options": {
-				"cwd": "${workspaceFolder}/server/build"
+				"cwd": "${workspaceFolder}"
 			},
 			"group": {
 				"kind": "build",
 				"default": true
 			},
+			"problemMatcher": "$gcc"
+		},
+		{
+			"label": "rebuild BoardGames",
+			"type": "shell",
+			"command": "./build.sh rebuild",
+			"options": {
+				"cwd": "${workspaceFolder}"
+			},
+			"group": "build",
 			"problemMatcher": "$gcc"
 		}
 	]

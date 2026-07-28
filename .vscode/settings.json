@@ -55,29 +55,7 @@
 		"logs/": true,
 		".codegraph": true,
 		".cursor": true,
-		"unity3d/ProjectSettings/": true,
-		"unity3d/UserSettings/": true,
-		"unity3d/temp/": true,
-		"unity3d/Library/": true,
-		"unity3d/Temp/": true,
-		"unity3d/*.csproj": true,
-		"unity3d/*.sln": true,
-		"unity3d/*.slnx": true,
-		"unity3d/.vscode": true,
-		"unity3d/Logs/": true,
-		"unity3d/Bundles/": true,
-		"unity3d/HybridCLRData/": true,
 		".cache": true,
-	},
-	"dotnet.defaultSolution": "unity3d/unity3d.slnx",
-	"explorer.fileNesting.enabled": true,
-	"explorer.fileNesting.patterns": {
-		"*.sln": "*.csproj",
-		"*.slnx": "*.csproj",
-	},
-	"[csharp]":{
-		"editor.tabSize": 4,
-		"editor.insertSpaces": false,
 	},
 	"files.associations": {
 		"*.txt": "lua",
@@ -166,6 +144,13 @@
 		"fft": "cpp"
 	},
 	"cmake.ignoreCMakeListsMissing": true,
+	"git.autoRepositoryDetection": true,
+	"git.openRepositoryInParentFolders": "always",
+	"git.repositoryScanMaxDepth": 2,
+	"git.detectSubmodules": true,
+	"dart.analysisExcludedFolders": [
+		"config/dart"
+	],
 	"clangd.arguments": [
 		"--compile-commands-dir=${workspaceFolder}/server/build",
 		"--background-index",

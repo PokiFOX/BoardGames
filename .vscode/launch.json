@@ -2,12 +2,6 @@
 	"version": "0.2.0",
 	"configurations": [
 		{
-			"name": "unity3d client",
-			"type": "vstuc",
-			"request": "attach",
-			"projectPath": "${workspaceFolder}/unity3d",
-		},
-		{
 			"name": "parse config",
 			"type": "debugpy",
 			"request": "launch",
@@ -27,6 +21,16 @@
 			"cwd": "${workspaceFolder}/server",
 			"preLaunchTask": "build BoardGames",
 			"stopOnEntry": false
+		},
+		{
+			"name": "app",
+			"type": "dart",
+			"request": "launch",
+			"program": "${workspaceFolder}/app/lib/main.dart",
+			"cwd": "${workspaceFolder}/app",
+			"toolArgs": [
+				"--dart-define=APP_LOG_DIR=${workspaceFolder}/app/logs"
+			]
 		},
 	]
 }

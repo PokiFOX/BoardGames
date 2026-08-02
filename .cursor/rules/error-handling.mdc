@@ -1,0 +1,54 @@
+---
+description: 仅校验用户数据异常；代码 bug 不做防御，直接崩溃
+alwaysApply: true
+---
+
+# 错误处理原则
+
+## 只允许校验「用户数据异常」
+
+对用户输入、客户端请求参数等**用户侧**的非法数据，可以校验并返回错误（ResultCode / 错误响应）或抛出异常。
+
+## 代码 bug 不做任何防御
+
+以下情况**不要**加校验、**不要**用 `??` / 默认值 / `orElse` / try-catch 吞掉、**不要**主动 `throw` 来「帮忙报错」：
+
+- 服务端 / 客户端自身逻辑错误
+- 协议字段缺失、类型不对、模块间约定不一致
+- 跨模块调用传错数据
+
+让代码在出错的那一行**直接挂掉**：
+
+- **服务端**：产生 core dump，可定位行号与内存状态
+- **客户端**：调试器直接停在出错行
+
+## 写法对照
+
+```dart
+// ❌ 不要用默认值掩盖服务端漏传
+final mround = msg.mround ?? config.mround;
+
+// ✅ 直接用，漏传就崩
+final mround = msg.mround;
+```
+
+```dart
+// ❌ 不要显式 throw 描述内部约定
+if (black == null) throw StateError('missing black');
+
+// ✅ 直接访问，找不到就崩
+final black = users.firstWhere((u) => u.color == color);
+```
+
+```cpp
+// ❌ 不要为内部状态打补丁
+if (roomconfig == nullptr) { mround = 8; return; }
+
+// ✅ 直接使用，配置没加载就崩
+mround = roomconfig->mround;
+```
+
+## 例外
+
+- 用户操作前的 UI 交互判断（如「非己方回合不发送」）属于产品逻辑，不是为 bug 擦屁股
+- 网络 I/O、登录等**外部系统**失败仍可按现有方式提示用户

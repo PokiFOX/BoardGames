@@ -4,7 +4,7 @@ EXTRA="$2"
 DIRS=(
 	"config"
 	"server"
-	"unity3d"
+	"app"
 )
 
 for dir in "${DIRS[@]}"; do

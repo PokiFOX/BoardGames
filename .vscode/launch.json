@@ -23,7 +23,7 @@
 			"stopOnEntry": false
 		},
 		{
-			"name": "app",
+			"name": "flutter app",
 			"type": "dart",
 			"request": "launch",
 			"program": "${workspaceFolder}/app/lib/main.dart",

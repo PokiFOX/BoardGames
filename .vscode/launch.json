@@ -13,7 +13,7 @@
 			"justMyCode": true,
 		},
 		{
-			"name": "(lldb) BoardGames",
+			"name": "(lldb) server",
 			"type": "lldb",
 			"request": "launch",
 			"program": "${workspaceFolder}/server/build/BoardGames",
